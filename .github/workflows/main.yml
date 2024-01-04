@@ -1,0 +1,16 @@
+name: Echo Something 
+
+on: 
+  workflow_dispatch: 
+
+jobs:
+  echo: 
+   name: "Failed"
+   runs-on: ubuntu-latest
+   steps:
+     - name: Echo Failed Text
+       run: exit 1
+     - name: Echo Here on Failure
+       if: ${{ failure() }}
+       run: echo "Failed Step"
+             
