@@ -9,7 +9,8 @@ jobs:
    runs-on: ubuntu-latest
    steps:
      - name: Echo Failed Text
-       run: exit 1
+       run: |
+        echo "Hello world"
      - name: Echo Here on Failure
        if: ${{ failure() }}
        run: echo "Failed Step"
