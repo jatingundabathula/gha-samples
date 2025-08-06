@@ -47,7 +47,8 @@ jobs:
       - name: Check Build Status
         id: check_build_status
         # This step always runs and sets an output based on the build_step's outcome
-        run: echo "Build step outcome: ${{ steps.build_step.outcome }}"
+        run: | # Changed to multi-line syntax for robustness
+          echo "Build step outcome: ${{ steps.build_step.outcome }}"
 
   # --- Linting Job ---
   # This job runs in parallel with the build and tests, simulating code quality checks.
